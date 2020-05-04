@@ -4,8 +4,8 @@
         <v-card-title><h3 class="display-1">Iniciar Sesión</h3></v-card-title>
         <v-card-text>
             <v-form name="form" @submit.prevent="handleLogin">
-                <v-text-field v-model="user.username" label="Username" prepend-icon="mdi-account-circle" />
-                <v-text-field v-model="user.password" :type="showPassword? 'text' :'password'"
+                <v-text-field v-validate="'required'" v-model="user.username" label="Username" prepend-icon="mdi-account-circle" name="username" />
+                <v-text-field v-validate="'required'" v-model="user.password" :type="showPassword? 'text' :'password'" name="password"
                 label="password" 
                 prepend-icon="mdi-lock" 
                 append-icon="mdi-eye-off"
@@ -17,7 +17,7 @@
         </v-card-text>
         <v-snackbar v-model="snackbar">
             {{ message }}
-             <v-btn color="blue" text @click="snackbar = false">cerrar</v-btn>
+            <v-btn color="blue" text @click="snackbar=false">cerrar</v-btn>
         </v-snackbar>
     </v-card>
             
@@ -26,6 +26,7 @@
 <script>
 import User from '../models/user';
 export default {
+    name:'Login',
     data:()=>({
         user: new User('', ''),
         showPassword:false,
@@ -61,7 +62,7 @@ export default {
                             this.message = 
                             (error.response && error.rsponse.data) ||
                             error.message ||
-                            error.toString(); 
+                            error.toString();
                         }
                     );
                 }
