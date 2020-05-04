@@ -3,9 +3,6 @@
    <v-app-bar app color="amber lighten-2" dense dark>
      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
      <v-toolbar-title>Huastech Pizza</v-toolbar-title>
-     <v-spacer></v-spacer>
-     <v-btn rounded color="blue darken-1" to="/Login" class="mx-2">login</v-btn>
-     <v-btn rounded color="blue darken-1">register</v-btn>
    </v-app-bar>
 
    <v-navigation-drawer app v-model="drawer" temporary>
@@ -21,8 +18,17 @@
      <v-divider></v-divider>
      <v-layout>
        <v-flex>
-         <v-btn text color="info" block to="/">Home</v-btn>
-         <v-btn text color="info" block to="/About">About page</v-btn>
+          <v-btn text color="info" block to="/"><v-icon>mdi-home</v-icon>Home</v-btn>
+          <v-btn text color="info" block to="/About">About page</v-btn>
+        <!--contenedor con directiva v-if para el control del inicio de sesion-->  
+       <v-container v-if="!currentUser"> 
+          <v-btn text color="blue darken-1" to="/Login" block>login</v-btn>
+          <v-btn text color="blue darken-1" to="/register" block>register</v-btn>
+       </v-container>
+        <!--Este boton solo aparece si el usuario está logueado-->
+       <v-container v-if="currentUser">
+          <v-btn  text color="blue darken-1" block>cerrar sesion</v-btn>
+       </v-container>
        </v-flex>
      </v-layout>
    </v-navigation-drawer>
@@ -38,7 +44,8 @@
 export default {
   data: () => ({
     //
-    drawer:false
+    drawer:false,
+    currentUser:false // test v-if to authentication
   }),
 };
 </script>
