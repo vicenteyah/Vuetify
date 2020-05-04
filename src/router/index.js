@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Profile from '../views/Profile.vue'
 import Register from '../views/Register.vue'
-import user from '../views/BoardUser.vue'
+import User from '../views/BoardUser.vue'
 Vue.use(VueRouter)
 
   const routes = [
@@ -37,7 +37,7 @@ Vue.use(VueRouter)
   {
     path:'/user',
     name:'user',
-    component: user
+    component: User
   }
 ]
 
