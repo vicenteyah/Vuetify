@@ -12,22 +12,23 @@
        </v-list-item-avatar>
 
        <v-list-item-content>
-         <v-list-item-title class="headline">Octocat</v-list-item-title>
+         <v-list-item-title v-if="!currentUser" class="headline">Ordene Ahora</v-list-item-title>
+         <v-list-item-title v-if="currentUser" ><v-btn text color="blue darken-1" block to="/profile">{{ currentUser.username }}</v-btn></v-list-item-title>
        </v-list-item-content>
      </v-list-item>
      <v-divider></v-divider>
      <v-layout>
        <v-flex>
           <v-btn text color="info" block to="/"><v-icon>mdi-home</v-icon>Home</v-btn>
-          <v-btn text color="info" block to="/About">About page</v-btn>
+          <v-btn text color="info" block to="/About"><v-icon>mdi-help-circle</v-icon> About page</v-btn>
         <!--contenedor con directiva v-if para el control del inicio de sesion-->  
        <v-container v-if="!currentUser"> 
-          <v-btn text color="blue darken-1" to="/Login" block>login</v-btn>
-          <v-btn text color="blue darken-1" to="/register" block>register</v-btn>
+          <v-btn text color="blue darken-1" to="/Login" block><v-icon>mdi-account-circle</v-icon> login</v-btn>
+          <v-btn text color="blue darken-1" to="/register" block><v-icon>mdi-account-plus</v-icon> register</v-btn>
        </v-container>
         <!--Este boton solo aparece si el usuario está logueado-->
        <v-container v-if="currentUser">
-          <v-btn  text color="blue darken-1" block>cerrar sesion</v-btn>
+          <v-btn  text color="blue darken-1" block @click.prevent="logOut"><v-icon>mdi-account-arrow-left</v-icon> cerrar sesion</v-btn>
        </v-container>
        </v-flex>
      </v-layout>
@@ -45,7 +46,32 @@ export default {
   data: () => ({
     //
     drawer:false,
-    currentUser:false // test v-if to authentication
+   // currentUser:false // test v-if to authentication
   }),
+  computed:{
+    currentUser() {
+      return this.$store.state.auth.user;
+    },
+    showAdminBoard() {
+      if (this.currentUser && this.currentUser.roles) {
+        return this.currentUser.roles.includes('ROLE_ADMIN');
+      }
+
+      return false;
+    },
+    showModeratorBoard() {
+      if (this.currentUser && this.currentUser.roles) {
+        return this.currentUser.roles.includes('ROLE_MODERATOR');
+      }
+
+      return false;
+    }
+  },
+  methods:{
+    logOut() {
+      this.$store.dispatch('auth/logout');
+      this.$router.push('/login');
+    }
+  }
 };
 </script>
