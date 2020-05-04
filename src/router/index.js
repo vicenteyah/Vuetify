@@ -26,7 +26,7 @@ Vue.use(VueRouter)
     component: Login
   },
   {
-    path:'register',
+    path:'/register',
     component:Register
   },
   {
