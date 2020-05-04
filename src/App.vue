@@ -1,9 +1,10 @@
 <template>
   <v-app>
-   <v-app-bar app color="deep-purple accent-4" dense dark>
+   <v-app-bar app color="amber lighten-2" dense dark>
      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-     <v-toolbar-title>Huastechnology</v-toolbar-title>
+     <v-toolbar-title>Huastech Pizza</v-toolbar-title>
      <v-spacer></v-spacer>
+     <v-btn rounded color="blue darken-1" to="/Login" class="mx-2">login</v-btn>
      <v-btn rounded color="blue darken-1">register</v-btn>
    </v-app-bar>
 
@@ -18,11 +19,16 @@
        </v-list-item-content>
      </v-list-item>
      <v-divider></v-divider>
-     
+     <v-layout>
+       <v-flex>
+         <v-btn text color="info" block to="/">Home</v-btn>
+         <v-btn text color="info" block to="/About">About page</v-btn>
+       </v-flex>
+     </v-layout>
    </v-navigation-drawer>
 
     <v-content>
-      <router-view/>
+        <router-view/>
     </v-content>
   </v-app>
 </template>
@@ -30,7 +36,6 @@
 <script>
 
 export default {
-  
   data: () => ({
     //
     drawer:false
