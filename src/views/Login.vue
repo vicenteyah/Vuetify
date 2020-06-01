@@ -4,9 +4,9 @@
         <v-card-title><h3 class="display-1">Iniciar Sesión</h3></v-card-title>
         <v-card-text>
             <v-form name="form" @submit.prevent="handleLogin">
-                <v-text-field v-validate="'required'" v-model="user.username" label="Username" prepend-icon="mdi-account-circle" name="username" />
+                <v-text-field v-validate="'required'" v-model="user.username" label="nombre de usuario" prepend-icon="mdi-account-circle" name="username" />
                 <v-text-field v-validate="'required'" v-model="user.password" :type="showPassword? 'text' :'password'" name="password"
-                label="password" 
+                label="contraseña" 
                 prepend-icon="mdi-lock" 
                 append-icon="mdi-eye-off"
                 @click:append="showPassword=!showPassword"/>
@@ -58,11 +58,11 @@ export default {
                             this.$router.push('/profile');
                         },
                         error => {
-                            this.snackbar = true
                             this.message = 
                             (error.response && error.rsponse.data) ||
                             error.message ||
                             error.toString();
+                            this.snackbar = true
                         }
                     );
                 }
