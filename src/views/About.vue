@@ -28,7 +28,7 @@
             <div v-show="show">
               <v-divider></v-divider>
               <v-card-text>
-                Desarrollador en nodejs express y python
+                Desarrollador Backend en nodejs express y python
               </v-card-text>
             </div>
           </v-expand-transition>
@@ -86,7 +86,7 @@
             <div v-show="show3">
               <v-divider></v-divider>
               <v-card-text>
-                Desarrollador frontend en vuejs, html y canvas
+                Desarrollador Frontend en vuejs, html y canvas
               </v-card-text>
             </div>
           </v-expand-transition>
