@@ -2,7 +2,7 @@
   <v-container grid-list-lg>
     <v-layout  >
       <v-flex xs12 md12>
-        <h1 class="display-2 text-center teal--text font-weight-bold" align="start" >Equipo de desarrollo</h1>
+        <h1 class="display-2 text-center teal--text font-weight-medium" align="start" >HuasTechnology Development Team</h1>
       </v-flex>
     </v-layout>
     <v-layout row wrap>
