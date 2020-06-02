@@ -1,13 +1,16 @@
 <template>
  <v-container grid-list-lg>
+    <v-container class="orange lighten-3 mt-2">
      <v-layout wrap class="mt-5">
       <v-flex xs12 md12>
         <h1 class="display-3 text-center teal--text font-weight-bold" align="start" >{{ content }}</h1>
       </v-flex>
-      <v-flex xs12 md12>
-        <h2 class="text-center grey--text" align="start">¡Promociones de la semana!</h2>
+      <v-flex xs12 md12 >
+        <v-img class="mx-auto" src="../assets/logo-huasteco.svg" width="300" height="200"></v-img>
+        <h2 class="text-center red--text" align="start">¡Promociones de la semana!</h2>
       </v-flex>
     </v-layout>
+    </v-container>
    <v-layout row wrap>
      <v-flex column wrap xs12 sm4 v-for="(promotion,index) in promotions" :key="index">
        <v-card class="mx-auto mt-5"  width="400">
