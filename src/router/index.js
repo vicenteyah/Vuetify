@@ -5,6 +5,8 @@ import Login from '../views/Login.vue'
 import Profile from '../views/Profile.vue'
 import Register from '../views/Register.vue'
 import User from '../views/BoardUser.vue'
+import Pizza from '../views/Pizza.vue'
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -38,6 +40,11 @@ Vue.use(VueRouter)
     path:'/user',
     name:'user',
     component: User
+  },
+  {
+    path: '/pizza',
+    name: 'Pizza',
+    component: Pizza
   }
 ]
 
