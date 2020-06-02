@@ -19,10 +19,10 @@
             </div>
             </v-form>
         </v-card-text>
-        <v-snackbar v-model="snackbar" :class="successful ? 'alert-success' : 'alert-danger'">
-            {{ message }}
-            <v-btn color="blue" text @click="snackbar=false">cerrar</v-btn>
-        </v-snackbar>
+        <v-alert v-model="alert" type="error" :class="successful ? 'alert-success' : 'alert-danger'">
+            {{ message.message }}
+            <v-btn color="blue" text @click="alert=false">cerrar</v-btn>
+        </v-alert>
     </v-card>
     
 </template>
@@ -33,7 +33,7 @@ export default {
     data:()=>({
         user: new User('','',''),
         showPassword: false,
-        snackbar: false,
+        alert: false,
         message:''
     }),
     computed: {
@@ -56,7 +56,7 @@ export default {
             data => {
               this.message = data.message;
               this.successful = true;
-              this.snackbar = true;
+              this.alert = true;
             },
             error => {
               this.message =
@@ -64,7 +64,7 @@ export default {
                 error.message ||
                 error.toString();
               this.successful = false;
-              this.snackbar = true;
+              this.alert = true;
             }
           );
         }
