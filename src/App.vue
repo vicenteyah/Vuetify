@@ -2,7 +2,7 @@
   <v-app>
    <v-app-bar app color="amber lighten-2" dense dark>
      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-     <v-toolbar-title>Huastech Pizza</v-toolbar-title>
+     <v-toolbar-title class="teal--text font-weight-bold">HuastecosPizza®</v-toolbar-title>
      <v-spacer></v-spacer>
      <v-btn color="info" fab dark small v-if="currentUser"><v-icon>mdi-cart</v-icon></v-btn>
    </v-app-bar>
