@@ -22,6 +22,7 @@
      <v-layout>
        <v-flex>
           <v-btn text color="info" block to="/"><v-icon>mdi-home</v-icon>Inicio</v-btn>
+          <v-btn text color="info" block to="/pizza"> Pizzas </v-btn>
           <v-btn text color="info" block to="/About"><v-icon>mdi-help-circle</v-icon> Acerca De</v-btn>
         <!--contenedor con directiva v-if para el control del inicio de sesion-->  
        <v-container v-if="!currentUser"> 
