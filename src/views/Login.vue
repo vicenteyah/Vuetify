@@ -15,10 +15,10 @@
                 </v-card-actions>
             </v-form>
         </v-card-text>
-        <v-snackbar v-model="snackbar">
-            {{ message }}
-            <v-btn color="blue" text @click="snackbar=false">cerrar</v-btn>
-        </v-snackbar>
+        <v-alert type="error" v-model="alert">
+            {{ message.message }}
+            <v-btn color="blue" text @click="alert=false">cerrar</v-btn>
+        </v-alert>
     </v-card>
             
 </template>
@@ -30,7 +30,7 @@ export default {
     data:()=>({
         user: new User('', ''),
         showPassword:false,
-        snackbar: false,
+        alert: false,
         message:''
     }),
     computed:{
@@ -59,10 +59,10 @@ export default {
                         },
                         error => {
                             this.message = 
-                            (error.response && error.rsponse.data) ||
+                            (error.response && error.response.data) ||
                             error.message ||
                             error.toString();
-                            this.snackbar = true
+                            this.alert = true
                         }
                     );
                 }
