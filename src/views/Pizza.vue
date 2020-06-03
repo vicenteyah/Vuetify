@@ -16,7 +16,7 @@
                     <v-card-text>
 
                     <div class="my-4 subtitle-1">
-                        $ {{ pizza.price }}
+                        Precio: $ {{ pizza.price }}
                     </div>
 
                     </v-card-text>
@@ -26,8 +26,9 @@
                     <v-card-actions>
                     <v-btn
                         color="deep-purple lighten-2"
-                        text
+                        rounded text
                     >
+                        <v-icon>mdi-cart</v-icon>
                         Ordenar
                     </v-btn>
                     </v-card-actions>

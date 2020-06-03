@@ -1,10 +1,13 @@
 <template>
   <v-container grid-list-lg>
-    <v-layout  >
+    <v-container class="blue-grey darken-1">
+    <v-layout >
       <v-flex xs12 md12>
-        <h1 class="display-2 text-center teal--text font-weight-medium" align="start" >HuasTechnology Development Team</h1>
+        <v-img class="mx-auto" src="../assets/HuasTechnology-logo.png" width="75" height="55"></v-img> 
+        <h1 class="display-2 text-center yellow--text font-weight-medium" align="start" > HuasTechnology Development Team</h1>
       </v-flex>
     </v-layout>
+    </v-container>
     <v-layout row wrap>
       <v-flex xs12 sm4>
         <v-card  width="300">
