@@ -6,6 +6,7 @@ import Profile from '../views/Profile.vue'
 import Register from '../views/Register.vue'
 import User from '../views/BoardUser.vue'
 import Pizza from '../views/Pizza.vue'
+import Additional from '../views/Additional.vue'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ Vue.use(VueRouter)
     path: '/pizza',
     name: 'Pizza',
     component: Pizza
+  },
+  {
+    path: '/additional',
+    name: 'Additional',
+    component: Additional
   }
 ]
 
