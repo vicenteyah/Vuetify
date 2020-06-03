@@ -18,7 +18,7 @@
          <v-card-title><h2>{{ promotion.packagename }}</h2></v-card-title>
          <v-card-text>Descripcion: {{ promotion.description }}</v-card-text>
          <v-card-text>Precio:$ {{ promotion.price }}</v-card-text>
-         <v-card-actions><v-btn rounded color="info">ordenar</v-btn></v-card-actions>
+         <v-card-actions><v-btn rounded text color="info"> <v-icon>mdi-cart</v-icon> ordenar</v-btn></v-card-actions>
        </v-card>
      </v-flex>
    </v-layout>
