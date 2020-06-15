@@ -4,7 +4,7 @@
      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
      <v-toolbar-title class="teal--text font-weight-bold">HuastecosPizza®</v-toolbar-title>
      <v-spacer></v-spacer>
-     <v-btn color="info" fab dark small v-if="currentUser"><v-icon>mdi-cart</v-icon></v-btn>
+     <v-btn color="info" fab dark small v-if="currentUser" to="/cart"><v-icon>mdi-cart</v-icon></v-btn>
    </v-app-bar>
 
    <v-navigation-drawer app v-model="drawer" temporary>
@@ -46,6 +46,7 @@
     <v-footer
     dark
     padless
+    md6 lg12
     >
     <v-card
       flat
@@ -65,11 +66,12 @@
       </v-card-text>
 
       <v-card-text class="white--text pt-0">
-        Visita nuestras redes sociales en facebook y github para saber más sobre nuestros repositorios y colaboradores de éste proyecto. HuastecosPizza® es una marca registrada de HuasTechnology, Inc. Todos los derechos reservados
+        Visita nuestras redes sociales en facebook y github para saber más sobre nuestros repositorios y colaboradores de éste proyecto. HuastecosPizza® es una marca registrada de HuasTechnology, Inc. Todos los derechos reservados.
+        Proporcionanos sugerencias de servicio para una mejor atención a clientes. 
       </v-card-text>
 
       <v-divider></v-divider>
-
+      <v-btn text color="warning">enviar feedback</v-btn>
       <v-card-text class="white--text">
         {{ new Date().getFullYear() }} — <strong>HuasTechnology, inc.</strong>
       </v-card-text>
