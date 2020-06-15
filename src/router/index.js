@@ -51,6 +51,11 @@ Vue.use(VueRouter)
     path: '/additional',
     name: 'Additional',
     component: Additional
+  },
+  {
+    path:'/cart',
+    name: 'cart',
+    component: () => import(/* webpackChunkName: "about" */ '../components/Cart.vue')
   }
 ]
 
