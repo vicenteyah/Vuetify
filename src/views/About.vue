@@ -9,7 +9,7 @@
     </v-layout>
     </v-container>
     <v-layout row wrap>
-      <v-flex xs12 sm4>
+      <v-flex xs12 sm4 lg3 class="mx-auto">
         <v-card  width="300">
           <v-img src="../assets/team/sara.jpg"  height="200px"/>
             <v-card-title>
@@ -38,7 +38,7 @@
        </v-card>
      </v-flex>
     
-    <v-flex xs12 sm4>
+    <v-flex xs12 sm4 lg3 class="mx-auto">
         <v-card width="300">
           <v-img src="../assets/team/vicente.png"  height="200px"/>
             <v-card-title>
@@ -67,7 +67,7 @@
        </v-card>
      </v-flex>
     
-    <v-flex xs12 sm4>
+    <v-flex xs12 sm4 lg3 class="mx-auto">
         <v-card width="300">
           <v-img src="../assets/team/kikin.jpg"  height="200px"/>
             <v-card-title>
