@@ -26,7 +26,7 @@
      </v-flex>
    </v-layout>
 
-  <v-dialog v-model="dialog" width="400" persistent>
+    <v-dialog v-model="dialog" width="400" persistent>
       <v-card>
         <v-card-title>Hey!</v-card-title>
         <v-card-text>Antes de ordenar debes iniciar sesión</v-card-text>
@@ -38,10 +38,10 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <v-alert type="success" v-model="alert" width="400" class="mx-auto">
+    <v-snackbar type="success" v-model="alert" width="400" class="mx-auto">
             {{ message }}
             <v-btn color="blue" text @click="alert=false" class="mx-5">cerrar</v-btn>
-    </v-alert>
+    </v-snackbar>
  </v-container>
  
 </template>
@@ -49,7 +49,6 @@
 <script>
 import UserService from '../services/user.service';
 import PromotionsService from '../services/promotions.service';
-import promotionsService from '../services/promotions.service';
 export default {
   data:() => ({
     promotions:[],
@@ -88,7 +87,7 @@ export default {
     getAItem(id){
       const ID = id;
       var oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
-      promotionsService.getAPromotion(ID).then(response => {
+      PromotionsService.getAPromotion(ID).then(response => {
         console.log(response.data)
         oldItems.push(response.data)
         
