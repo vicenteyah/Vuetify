@@ -1,7 +1,7 @@
 <template>
       <v-container class="mt-2" grid-list-lg>
             <v-layout class="mx-auto" row wrap>
-                  <v-flex column wrap xs12 md4 v-for="(additional,index) in additionals" :key="index">
+                  <v-flex column wrap xs12 md4 lg3 v-for="(additional,index) in additionals" :key="index">
                        <v-card class="mx-auto" max-width="400">
                              <v-img class="white--text align-end" 
                              height="200" 
@@ -11,7 +11,7 @@
                                    {{ additional.additionalName }}
                              </v-card-title>
                              <v-card-subtitle class="pb-0">
-                                   Precio = $ {{ additional.price }}
+                                   Precio:$ {{ additional.price }}
                              </v-card-subtitle>
                              <v-card-actions>
                                    <v-btn color="orange" text rounded><v-icon>mdi-cart </v-icon> ordenar</v-btn>
