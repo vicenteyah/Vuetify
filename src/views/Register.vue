@@ -23,6 +23,10 @@
             {{ message.message }}
             <v-btn color="blue" text @click="alert=false">cerrar</v-btn>
         </v-alert>
+        <v-alert v-model="successful" type="success">
+            Usuario Creado satisfactoriamente
+            <v-btn text color="info" to="/login">iniciar sesion</v-btn>
+        </v-alert>
     </v-card>
     
 </template>
@@ -34,7 +38,8 @@ export default {
         user: new User('','',''),
         showPassword: false,
         alert: false,
-        message:''
+        message:'',
+        successful: false
     }),
     computed: {
     loggedIn() {
@@ -54,9 +59,7 @@ export default {
         if (isValid) {
           this.$store.dispatch('auth/register', this.user).then(
             data => {
-              this.message = data.message;
               this.successful = true;
-              this.alert = true;
             },
             error => {
               this.message =
