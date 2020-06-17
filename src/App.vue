@@ -3,6 +3,7 @@
    <v-app-bar app color="amber lighten-2" dense dark>
      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
      <v-toolbar-title class="teal--text font-weight-bold">HuastecosPizza®</v-toolbar-title>
+     <v-btn v-if="showAdminBoard" to="/dashboard" rounded color="success" class="mx-3">Herramientas de Administrador</v-btn>
      <v-spacer></v-spacer>
      <v-btn color="info" fab dark small v-if="currentUser" to="/cart"><v-icon>mdi-cart</v-icon></v-btn>
    </v-app-bar>
@@ -24,7 +25,7 @@
           <v-btn text color="info" block to="/"><v-icon>mdi-home</v-icon>Inicio</v-btn>
           <v-btn text color="info" block to="/pizza"> <v-icon>mdi-pizza</v-icon> Pizzas </v-btn>
           <v-btn text color="blue darken-1" to="/additional" block><v-icon>mdi-food</v-icon> Adicionales</v-btn>
-          <v-btn text color="info" block><v-icon>mdi-food-variant</v-icon> Extras </v-btn>
+          <v-btn text color="info" block to="/extras"><v-icon>mdi-food-variant</v-icon> Extras </v-btn>
           <v-btn text color="info" block to="/About"><v-icon>mdi-help-circle</v-icon> Acerca De</v-btn>
         <!--contenedor con directiva v-if para el control del inicio de sesion-->  
        <v-container v-if="!currentUser"> 
