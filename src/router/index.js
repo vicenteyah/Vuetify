@@ -4,7 +4,6 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Profile from '../views/Profile.vue'
 import Register from '../views/Register.vue'
-import User from '../views/BoardUser.vue'
 import Pizza from '../views/Pizza.vue'
 import Additional from '../views/Additional.vue'
 
@@ -38,9 +37,9 @@ Vue.use(VueRouter)
     component: Profile
   },
   {
-    path:'/user',
-    name:'user',
-    component: User
+    path:'/dashboard',
+    name:'dashboard',
+    component: ()=> import('../views/DashboardAdmin')
   },
   {
     path: '/pizza',
@@ -56,6 +55,27 @@ Vue.use(VueRouter)
     path:'/cart',
     name: 'cart',
     component: () => import(/* webpackChunkName: "about" */ '../components/Cart.vue')
+  },
+  {
+    path:'/extras',
+    name: 'extras',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Extra.vue')
+  },
+  {
+    path:'/create',
+    name:'create',
+    component: ()=> import('../components/createProducts')
+  }
+  ,
+  {
+    path:'/feedreq',
+    name:'feedreq',
+    component: ()=> import('../components/feedbackRequest')
+  },
+  {
+    path:'/jobreq',
+    name:'jobreq',
+    component: ()=> import('../components/jobExchange')
   }
 ]
 
