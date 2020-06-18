@@ -26,7 +26,8 @@
           <v-btn text color="info" block to="/pizza"> <v-icon>mdi-pizza</v-icon> Pizzas </v-btn>
           <v-btn text color="blue darken-1" to="/additional" block><v-icon>mdi-food</v-icon> Adicionales</v-btn>
           <v-btn text color="info" block to="/extras"><v-icon>mdi-food-variant</v-icon> Extras </v-btn>
-          <v-btn text color="info" block to="/About"><v-icon>mdi-help-circle</v-icon> Acerca De</v-btn>
+          <v-btn text color="info" block to="/jobexchanges"><v-icon>mdi-briefcase</v-icon> Bolsa de Trabajo</v-btn>
+          <v-btn text color="info" block to="/About"><v-icon>mdi-help-circle</v-icon> Acerca De</v-btn>          
         <!--contenedor con directiva v-if para el control del inicio de sesion-->  
        <v-container v-if="!currentUser"> 
           <v-btn text color="blue darken-1" to="/Login" block><v-icon>mdi-account-circle</v-icon> Iniciar Sesión</v-btn>
