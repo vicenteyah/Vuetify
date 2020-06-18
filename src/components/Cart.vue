@@ -23,16 +23,11 @@
                <v-card v-if="!empty" width="800" class="mx-auto mt-1"  v-for="(item,index) in taskList" :key="index">
                     <v-chip label color="primary" text-color="white" class="ml-0">
                        <v-icon left>mdi-label</v-icon>
-                        <v-card-title>id del paquete: {{item.id}}</v-card-title>
+                        <v-card-title>id del producto: {{item.id}}</v-card-title>
                    </v-chip>
                    <v-card-subtitle>Nombre del Paquete: {{item.packagename}}</v-card-subtitle>
                    <v-card-subtitle>Descripción del producto: {{ item.description }}</v-card-subtitle>
                    <v-card-text>Precio:$ {{item.price}} </v-card-text>
-                   <v-divider></v-divider>
-                   <v-card-actions>
-                       <v-spacer></v-spacer>
-                       <!--<v-btn rounded text color="error" @click="deleteItem(item.id)">eliminar</v-btn> not working well--> 
-                   </v-card-actions>
                </v-card>
            </v-flex>
        </v-layout>
@@ -80,6 +75,7 @@
 export default {
     data: () =>({
         taskList:[],
+        taskList2:[],
         auxlist:[],
         flag: true,
         Total:0,
@@ -99,12 +95,14 @@ export default {
             this.$router.push('/login');
         }
         var oldItems = JSON.parse(localStorage.getItem('itemsArray'))
-            this.taskList = oldItems
-            if (this.taskList === null){
-                this.empty = true
-            }else{
-                this.empty = false
-            }
+        var oldItems2 = JSON.parse(localStorage.getItem('itemsArray2'))
+        this.taskList = oldItems
+        this.taskList2 = oldItems
+        if (this.taskList === null && this.taskList2 === null){
+          this.empty = true
+        }else{
+          this.empty = false
+        }
             //console.log(this.taskList)
         
            
