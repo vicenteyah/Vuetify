@@ -14,29 +14,62 @@
                                    Precio:$ {{ additional.price }}
                              </v-card-subtitle>
                              <v-card-actions>
-                                   <v-btn color="orange" text rounded><v-icon>mdi-cart </v-icon> ordenar</v-btn>
+                                   <v-btn v-if="!currentUser" color="orange" text rounded @click="dialog = !dialog"><v-icon>mdi-cart</v-icon> ordenar</v-btn>
+                                   <v-btn v-if="currentUser" rounded  text color="primary" @click="getAItem(additional.id)"><v-icon>mdi-cart</v-icon>agregar al carrito</v-btn>
                              </v-card-actions>
                        </v-card>
                   </v-flex>
             </v-layout>
+
+    <v-dialog v-model="dialog" width="400" persistent>
+      <v-card>
+        <v-card-title>Hey!</v-card-title>
+        <v-card-text>Antes de ordenar debes iniciar sesión</v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-btn rounded text color="primary" @click="dialog=!dialog">Cerrar</v-btn>
+          <v-btn rounded text color="error" to="/register"> registrate </v-btn>
+          <v-btn rounded text color="green" to="/login">iniciar sesión</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    
+    <v-snackbar type="success" v-model="alert" width="400" class="mx-auto">
+        {{ message }}
+        <v-btn color="blue" text @click="alert=false" class="mx-5">cerrar</v-btn>
+    </v-snackbar>
       </v-container>
 </template>
 
 <script>
+import additionalService from '../services/Additional.service'
 export default {
       data:()=> ({
-            additionals: [
-                  {
-            id:1,
-            imgurl:'https://www.pizcadesabor.com/wp-content/uploads/2017/07/Adobo-tacos-al-pastor-4.jpg',
-            additionalName:'orden de tacos al pastor (3 tacos)',
-            price:30},
-            {
-            id:2,
-            imgurl:'https://cdn.kiwilimon.com/recetaimagen/30178/th5-640x426-32651.jpg',
-            additionalName:'Burrito de arrachera',
-            price:125}
-            ]
-      })
+            additionals:[],
+            dialog: false,
+            message:'',
+            alert: false
+      }),
+      computed: {
+            currentUser(){
+                  return this.$store.state.auth.user
+            }
+      },
+      mounted(){
+         additionalService.getAdditional().then(response => {
+               this.additionals = response.data
+         })
+      },
+      methods:{
+            getAItem(id){
+               var oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
+               additionalService.getAnAdditional(id).then(response => {
+                  oldItems.push(response.data)
+                  localStorage.setItem('itemsArray',JSON.stringify(oldItems))
+                  this.message = 'Agregado al carrito'
+                  this.alert = true
+               })
+            }
+      }
 }
 </script>
