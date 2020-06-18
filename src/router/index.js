@@ -76,6 +76,11 @@ Vue.use(VueRouter)
     path:'/jobreq',
     name:'jobreq',
     component: ()=> import('../components/jobExchange')
+  },
+  {
+    path: '/feedback',
+    name: 'feedback',
+    component: () => import('../views/Feedback')
   }
 ]
 
