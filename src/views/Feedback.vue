@@ -7,9 +7,10 @@
             ref="form"
             v-model="valid"
             lazy-validation
+            @submit.prevent="sendFeedback"
         >
             <v-text-field
-            v-model="name"
+            v-model="feedback.completename"
             :counter="10"
             :rules="nameRules"
             label="Nombre"
@@ -17,28 +18,28 @@
             ></v-text-field>
 
             <v-text-field
-            v-model="email"
+            v-model="feedback.email"
             :rules="emailRules"
             label="E-mail"
             required
             ></v-text-field>
 
             <v-text-field
+            v-model="feedback.phone"
+            :rules="phoneRule"
             label="Teléfono"
             required
             ></v-text-field>
 
             <v-select
-            v-model="select"
+            v-model="feedback.store"
             :items="items"
-            :rules="[v => !!v || 'Item is required']"
+            :rules="[v => !!v || 'La sucursal es requerida']"
             label="Sucursal"
             required
             ></v-select>
 
-            <v-textarea label="Mensaje">
-                
-            </v-textarea>
+            <v-textarea v-model="feedback.message" label="Mensaje"  :rules="messageRule"/>
 
             <v-checkbox
             v-model="checkbox"
@@ -51,9 +52,10 @@
             :disabled="!valid"
             color="success"
             class="mr-4"
+            type="submit"
             @click="validate"
             >
-            Validate
+            <v-icon>mdi-email</v-icon> enviar
             </v-btn>
 
             <v-btn
@@ -61,33 +63,27 @@
             class="mr-4"
             @click="reset"
             >
-            Reset Form
-            </v-btn>
-
-            <v-btn
-            color="warning"
-            @click="resetValidation"
-            >
-            Reset Validation
+            Limpiar campos
             </v-btn>
         </v-form>
     </v-card>
 </template>
 <script>
+import Feedback from '../models/feedback'
 export default {
     data: () => ({
       valid: true,
-      name: '',
-      nameRules: [
+      feedback: new Feedback('','','','',''),
+      nameRules:[
         v => !!v || 'Name is required',
         v => (v && v.length <= 10) || 'Name must be less than 10 characters',
       ],
-      email: '',
       emailRules: [
         v => !!v || 'E-mail is required',
         v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       ],
-      select: null,
+      phoneRule:[ v => !!v || 'Telefono es requerido'],
+      messageRule:[v => !!v || 'EL mensaje es requerido'],
       items: [
         'Huastechnology Fco. Montejo',
         'Huastechnology Centro',
@@ -96,7 +92,9 @@ export default {
       ],
       checkbox: false,
     }),
-
+    created(){
+      this.$refs.form.resetValidation()
+    },
     methods: {
       validate () {
         this.$refs.form.validate()
@@ -104,9 +102,10 @@ export default {
       reset () {
         this.$refs.form.reset()
       },
-      resetValidation () {
-        this.$refs.form.resetValidation()
-      },
+      sendFeedback(){
+        console.log(this.feedback)
+      }
+     
     },
   }
 </script>
