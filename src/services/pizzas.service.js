@@ -6,6 +6,9 @@ class PizzasService {
     getPizzas(){
         return axios.get(API_URL + 'pizzas')
     }
+    getAPizza(id){
+        return axios.get(API_URL + 'pizzas/' + id)
+    }
     createPizzas(pizza){
         return axios.post(API_URL + 'pizzas',{
             imgurl: pizza.imgurl,
