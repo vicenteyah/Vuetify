@@ -1,8 +1,8 @@
 <template>
-    <v-container>
+    <v-container class="info mb-3 pa-3 mt-5">
         <v-layout>
             <v-flex>
-                <v-card width="800" class="mx-auto">
+                <v-card width="800" class="mx-auto light-green lighten-4">
                     <v-col>
                         <v-row class="mx-auto" justify="center">
                             <v-card-title>Ajustes de Administrador</v-card-title>
