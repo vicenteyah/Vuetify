@@ -2,7 +2,7 @@
     <v-container grid-list-lg class="deep-purple darken-1 mb-3 mt-2">
         <v-layout row wrap>
             <v-flex column wrap xs12 sm4 md10 lg3>
-                <v-card width="400" class="mt-1"> <v-row justify="center"> <v-card-title>Promociones</v-card-title></v-row></v-card>
+                <v-card width="400" class="mt-1 deep-orange lighten-3"> <v-row justify="center"> <v-card-title>Promociones</v-card-title></v-row></v-card>
                 <v-card width="400" class="mt-2"  v-for="(item,index) in promotions" :key="index">
                    <v-chip label color="primary" text-color="white" class="ml-0">
                        <v-icon left>mdi-label</v-icon>
@@ -45,7 +45,7 @@
             </v-flex>
     <!--______________________________________PIZZAS SECTION_______________________________________-->
             <v-flex column wrap xs12 sm4 md10 lg3>
-                <v-card width="400" class="mt-1"><v-row justify="center"> <v-card-title>Pizzas</v-card-title></v-row></v-card>
+                <v-card width="400" class="mt-1 green accent-3"><v-row justify="center"> <v-card-title>Pizzas</v-card-title></v-row></v-card>
                 <v-card width="400" class="mt-2"  v-for="(item,index) in pizzas" :key="index">
                    <v-chip label color="primary" text-color="white" class="ml-0">
                        <v-icon left>mdi-label</v-icon>
@@ -85,7 +85,7 @@
             </v-flex>
     <!--__________________________ADDITIONALS SECTION ________________________________-->
             <v-flex column wrap xs12 sm4 md10 lg3>
-                <v-card width="400" class="mt-1"><v-row justify="center"> <v-card-title>Adicionales</v-card-title></v-row></v-card>
+                <v-card width="400" class="mt-1 orange lighten-2"><v-row justify="center"> <v-card-title>Adicionales</v-card-title></v-row></v-card>
                 <v-card width="400" class="mt-2" v-for="(additional,index) in additionals" :key="index">
                     <v-chip label color="info" text-color="white" class="ml-0">
                         <v-icon left>mdi-label</v-icon>
@@ -125,7 +125,7 @@
             </v-flex>
 <!--_______________________________________EXTRAS SECTION __________________________________________________________-->
             <v-flex column wrap xs12 sm4 md10 lg3>
-                <v-card width="400" class="mt-1"><v-row justify="center"> <v-card-title>Extras</v-card-title></v-row></v-card>
+                <v-card width="400" class="mt-1 cyan accent-2"><v-row justify="center"> <v-card-title>Extras</v-card-title></v-row></v-card>
                 <v-card width="400" class="mt-2" v-for="(extra,index) in extras" :key="index">
                     <v-chip label color="info" text-color="white" class="ml-0">
                         <v-icon>mdi-label</v-icon>
