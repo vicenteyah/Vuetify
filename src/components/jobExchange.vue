@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-layout>
-            <v-flex column wrap xs12 sm4 md10 lg4 v-for="(job, index) in job_list" :key="index">
+            <v-flex column wrap xs12 sm4 md5 lg4 v-for="(job, index) in job_list" :key="index">
                 <v-card width="500" class="mx-auto">
                    <v-chip label color="primary" text-color="white" class="ml-0">
                        <v-icon left>mdi-label</v-icon>
