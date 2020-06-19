@@ -12,7 +12,7 @@
              append-icon="mdi-eye-off"
              @click:append="showPassword=!showPassword"/>
              <v-card-actions>
-                <v-btn rounded color="primary" type="submit" >Registrarse Ahora</v-btn>
+                <v-btn rounded color="primary" type="submit" >Registrarse</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn rounded color="info" to="/login">iniciar sesion</v-btn>
              </v-card-actions>
