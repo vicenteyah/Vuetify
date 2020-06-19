@@ -73,7 +73,7 @@
       </v-card-text>
 
       <v-divider></v-divider>
-      <v-btn to="/feedback" text color="warning">enviar feedback</v-btn>
+      <v-btn to="/feedback" text color="warning"><v-icon>mdi-comment-alert</v-icon>enviar feedback</v-btn>
       <v-card-text class="white--text">
         {{ new Date().getFullYear() }} — <strong>HuasTechnology, inc.</strong>
       </v-card-text>
