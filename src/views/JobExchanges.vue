@@ -19,7 +19,7 @@
                                     {{job.title}}
                                 </v-card-title>
                             </v-row>
-                            <v-row justify="left">
+                            <v-row>
                                 <p>
                                     <span>Requisitos</span>
                                     <v-card-subtitle> {{job.requesitos}} </v-card-subtitle>                                    
