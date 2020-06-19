@@ -2,10 +2,10 @@
     <v-container>
        <v-layout>
            <v-flex>
-               <v-card width="800" class="mx-auto">
+               <v-card width="800" class="mx-auto amber lighten-3">
                    <v-col>
                        <v-row class="mx-auto" justify="center">
-                           <v-card-title>Carrito</v-card-title>
+                           <v-card-title>Mi Orden</v-card-title>
                        </v-row>
                    </v-col>
                    <v-divider></v-divider>
@@ -20,8 +20,8 @@
                 </v-card>
 
 
-               <v-card v-if="!empty" width="800" class="mx-auto mt-1"  v-for="(item,index) in taskList" :key="index">
-                    <v-chip label color="primary" text-color="white" class="ml-0">
+               <v-card v-if="!empty" width="800" class="mx-auto mt-1 blue lighten-5"  v-for="(item,index) in taskList" :key="index">
+                    <v-chip label color="error" text-color="white" class="ml-0">
                        <v-icon left>mdi-label</v-icon>
                         <v-card-title>id del producto: {{item.id}}</v-card-title>
                    </v-chip>
@@ -33,10 +33,10 @@
        </v-layout>
        <v-layout>
            <v-flex>
-               <v-card width="800" class="mx-auto mt-1" >
+               <v-card width="800" class="mx-auto mt-1 deep-orange accent-1" >
                    <v-card-title>Total a Comprar:$ {{ Total }}</v-card-title>
                    <v-card-actions>
-                       <v-btn  rounded color="success"  @click="dialog=!dialog" >comprar carrito</v-btn>
+                       <v-btn  rounded color="success"  @click="dialog=!dialog" >ordenar</v-btn>
                        <v-spacer></v-spacer>
                        <v-btn rounded  color="info" to="/">regresar a promociones</v-btn>
                        <v-spacer></v-spacer>
@@ -46,7 +46,7 @@
                        @click="loader = 'loading'"
                        v-on:click="cancelCart"
                        >
-                       cancelar carrito</v-btn>
+                       vaciar carrito</v-btn>
                    </v-card-actions>
                </v-card>
 
