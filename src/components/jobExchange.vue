@@ -1,11 +1,11 @@
 <template>
-    <v-container>
-        <v-layout>
-            <v-flex column wrap xs12 sm4 md5 lg4 v-for="(job, index) in job_list" :key="index">
+    <v-container grid-list-lg class="mt-2 deep-orange lighten-2">
+        <v-layout row wrap>
+            <v-flex column wrap xs12 sm4 md10 lg3 v-for="(job, index) in job_list" :key="index">
                 <v-card width="500" class="mx-auto">
                    <v-chip label color="primary" text-color="white" class="ml-0">
                        <v-icon left>mdi-label</v-icon>
-                       TITULO
+                       Solicitud uuid: {{job.id}}
                    </v-chip>
                    <v-card-subtitle><b>Nombre: </b> {{job.name}} </v-card-subtitle>
                    <v-card-subtitle><b> Telefono: </b> {{job.phone}} </v-card-subtitle>
