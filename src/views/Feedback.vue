@@ -102,9 +102,6 @@ export default {
       ],
       checkbox: false,
     }),
-    created(){
-      this.$refs.form.resetValidation()
-    },
     methods: {
       validate () {
         this.$refs.form.validate()
