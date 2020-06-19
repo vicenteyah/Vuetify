@@ -57,6 +57,7 @@
       <v-card>
         <v-card-title>Hey!</v-card-title>
         <v-card-text>Estas seguro de realizar está compra</v-card-text>
+        <v-card-text>enviar a ésta direccion: {{userAddress.addressData}}</v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
           <v-btn rounded text color="primary" @click="dialog=!dialog">cancelar</v-btn>
@@ -72,6 +73,7 @@
 </template>
 
 <script>
+import personalData from '../services/Personal.service'
 export default {
     data: () =>({
         taskList:[],
@@ -83,7 +85,8 @@ export default {
         loader: null,
         empty:true,
         dialog:false,
-        alert:false
+        alert:false,
+        userAddress:''
     }),
     computed: {
         currentUser() {
@@ -104,11 +107,16 @@ export default {
           this.empty = false
         }
             //console.log(this.taskList)
-        
+        const id = this.currentUser.id
+        personalData.getPersonalData(id).then(response=>{
+          this.userAddress = response.data
+        })
            
     },
     created(){
-        this.computeTotalPrice()
+      this.computeTotalPrice()
+     
+    
     },
     methods:{
         computeTotalPrice(){
