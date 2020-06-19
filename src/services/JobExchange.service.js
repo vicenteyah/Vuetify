@@ -13,6 +13,14 @@ class jobService {
             jobname:jobexchange.jobname
         })
     }
+
+    getJobExchange () {
+        return axios.get(API_URL + 'jobexchanges')
+    }
+
+    deleteJobExchanges(id){
+        return axios.delete(API_URL + 'jobexchanges/' + id)
+    }
 }
 
 export default new jobService();
