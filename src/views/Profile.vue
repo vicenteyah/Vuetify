@@ -1,5 +1,5 @@
 <template>
-    <v-card width="700" class="mx-auto mt-5">
+    <v-card width="700" class="mx-auto mt-5 teal lighten-5">
         <v-card-title><strong>Perfil de: {{ currentUser.username }}</strong></v-card-title>
         <v-card-text><strong>autorización:</strong>
             {{currentUser.accessToken.substring(0, 20)}} ... {{currentUser.accessToken.substr(currentUser.accessToken.length - 20)}}
