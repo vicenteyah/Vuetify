@@ -12,7 +12,7 @@
     </v-layout>
     </v-container>
    <v-layout row wrap>
-     <v-flex column wrap xs12 sm4 lg2 v-for="(promotion,index) in promotions" :key="index">
+     <v-flex  column wrap xs12 sm4 md10 lg3 v-for="(promotion,index) in promotions" :key="index">
        <v-card class="mx-auto mt-5"  width="400">
          <v-img :src="promotions[index].imgurl" height="200" width="400" ></v-img> 
          <v-card-title>{{ promotion.packagename }}</v-card-title>

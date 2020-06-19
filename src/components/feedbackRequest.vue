@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>feedbacks requests</h1>
+        <h1>LisT feedbacks not working yet</h1>
     </div>
 </template>

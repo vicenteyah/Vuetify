@@ -1,7 +1,7 @@
 <template>
     <v-container grid-list-lg>
         <v-layout row wrap>
-            <v-flex column wrap xs12 sm4 md10 lg4 v-for="(pizza, index) in pizzas" :key="index">
+            <v-flex  column wrap xs12 sm4 md10 lg3 v-for="(pizza, index) in pizzas" :key="index">
                 <v-card
                     class="mx-auto"
                     max-width="374"
