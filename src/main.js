@@ -4,7 +4,11 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 import '@babel/polyfill'
+import veeValidate from 'vee-validate';
+import Vuex from 'vuex';
 
+Vue.use(Vuex);
+Vue.use(veeValidate);
 Vue.config.productionTip = false
 
 new Vue({
